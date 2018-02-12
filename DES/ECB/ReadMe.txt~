@@ -1,0 +1,31 @@
+-----------------------DATA ENCRYPTION STANDARD-----------------------
+
+This program is an implementation of DES. It is a symmetric, 64-bit block cipher as it uses the same key for both encryption and decryption and operates on 64 bit blocks of data at a time.
+There are 2 operational modes, namely EBC and CBC.
+
+Here the plain text is stored in the file "text.txt".
+For, key generation, a 16 hex digit is randomly generated which is then converted to a 64 bit binary. The same procedure is followed for IV (Initialization Vector) in case of CBC.
+Since this is randomly generated, it is printed at the terminal so that the same key can be used at the decryption end to maintain the randomness. 
+
+
+Files submitted
+
+1. Encryption.py - This program encrypts the plain text in the file "text.txt" and writes the cipher text in the file "ciphertext.txt".
+2. Decryption.py - This program decrypts the cipher text in the file "ciphertext.txt" to a plain text and writes it in the file "decryption.txt".
+
+Execution
+
+1. Open the terminal and go to the folder where the program is stored.
+2. Run the encryption program by executing the command "python encryption.py".
+3. open the code for decryption and paste the key for EBC  or key and offset(Initialization Vector) for CBC that is output by the encryption program.This has to be done so as to maintain the randomness of the key and the IV.
+4. Save the program and execute it with the command "python decryption.py".
+5. Open the "text.txt" and "decryption.txt" to compare the input plain text and decrypted cipher text.
+
+Design document
+
+1. from operator import xor
+This is used to perform the bitwise exor operation of an integer which is converted to binary
+2. import random
+This library is used to call a function random.choice which randomly picks a character from a given set which is then used as key or as Initialization Vector
+3. import binascii
+This is used to invoke a function which helps to convert between ascii and binary
